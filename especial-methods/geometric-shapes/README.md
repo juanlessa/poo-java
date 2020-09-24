@@ -7,7 +7,8 @@
   
   Garanta ainda as seguintes especificações:
   
-  a) construa a classe Ponto;  
+a) construa a classe Ponto;
+  
     public class Ponto {
         private double x;
         private double y;
@@ -16,10 +17,16 @@
         public getY() { .. }
         public String toString { .. }
         // ..
-        }
-  b) crie classes que representem cada uma das figuras geométricas, implementando construtores e métodos adequados para cada classe.
-  c) adicione todos os métodos especiais importantes ( toString(), equals(), get...(), set...(), ... );
-  d) implemente um método para calcular a área de cada tipo de figura;
-  e) implemente um método para calcular o perímetro de cada tipo de figura;
-  f) implemente um método para verificar se os dois círculos se intercetam;
-  g) implemente um programa que lhe permita testar todas as classes criadas.
+    }
+
+b) crie classes que representem cada uma das figuras geométricas, implementando construtores e métodos adequados para cada classe.
+
+c) adicione todos os métodos especiais importantes ( toString(), equals(), get...(), set...(), ... );
+
+d) implemente um método para calcular a área de cada tipo de figura;
+
+e) implemente um método para calcular o perímetro de cada tipo de figura;
+
+f) implemente um método para verificar se os dois círculos se intercetam;
+
+g) implemente um programa que lhe permita testar todas as classes criadas.
