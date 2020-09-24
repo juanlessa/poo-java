@@ -1,9 +1,12 @@
 ### Exercicio
   Respeitando os conceitos de encapsulamento, implemente classes que permitam modelar as seguintes formas geométricas:
+  
   * Círculo, caracterizado por um centro e raio;
   * Triângulo, caracterizado pela dimensão dos seus lados (lado1, lado2 e lado3);
-  * Retângulo, caracterizado por comprimento e altura.  
+  * Retângulo, caracterizado por comprimento e altura.
+  
   Garanta ainda as seguintes especificações:
+  
   a) construa a classe Ponto;  
     public class Ponto {
         private double x;
