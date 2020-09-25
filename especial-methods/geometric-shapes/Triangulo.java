@@ -1,6 +1,6 @@
 import java.lang.Math;
 
-import javax.lang.model.util.ElementScanner6;
+
 public class Triangulo {
     private double lado1;
     private double lado2;
