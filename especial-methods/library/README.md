@@ -27,7 +27,7 @@ responder aos requisitos do enunciado. Teste as classes desenvolvidas com o prog
 seguinte:
 
     import java.util.ArrayList;
-    public class Ex52 {
+    public class Main {
         public static void main(String[] args) {
             // Para o conjunto de Livros vamos criar um vetor de 10 posições
             // Este vetor tem uma dimensão fixa pelo que se for necessário guardar
