@@ -56,6 +56,7 @@ public class Main {
 
 		Scanner scan = new Scanner(System.in);
 		while (true) {
+			System.out.println("////////////////////////////////////////////////////////////////////////////////////////////////////");
 			for(int i=0; i < agencias.size(); i++) {
 				System.out.printf("%s - %s\n", i+1, agencias.get(i));
 			}
@@ -88,6 +89,7 @@ public class Main {
 			}else{
 				int indx = Integer.parseInt(act) - 1;
 				while (true){
+					System.out.println("////////////////////////////////////////////////////////////////////////////////////////////////////");
 					System.out.println(agencias.get(indx));
 					System.out.println(agencias.get(indx).getAloj());
 					System.out.println(agencias.get(indx).getCar());
@@ -99,8 +101,11 @@ public class Main {
 					} while(!(act.matches("[0-4]"))); 
 					if (Integer.parseInt(act) == 0) {
 						break;
+
 					}else if (Integer.parseInt(act) == 1){
+						System.out.println("////////////////////////////////////////////////////////////////////////////////////////////////////");
 						String pat = "";
+						System.out.println("V - Voltar");
 						for (int i = 0; i < agencias.get(indx).getCar().size(); i++) {
 							Carro c = agencias.get(indx).getCar().get(i);
 							if (c.getDisponivel()) {
@@ -115,10 +120,46 @@ public class Main {
 						do{
 							System.out.print(">>> ");
 							act = scan.next();
+							if (act.matches("V|v")) {
+								break;
+							}
 						} while (!(act.matches(pat)));
+						if (act.matches("v|V")) {
+							continue;
+						}
 						agencias.get(indx).getCar().get(Integer.parseInt(act)).levantar();
-					}else if (Integer.parseInt(act) == 3){
+
+					}else if (Integer.parseInt(act) == 2){
+						System.out.println("////////////////////////////////////////////////////////////////////////////////////////////////////");
 						String pat = "";
+						System.out.println("V - Voltar");
+						for (int i = 0; i < agencias.get(indx).getAloj().size(); i++) {
+							Alojamento a = agencias.get(indx).getAloj().get(i);
+							if (a.getDisponibilidade()) {
+								System.out.printf("%s - %s\n", i, agencias.get(indx).getAloj().get(i));
+								pat = pat + i + "|";
+							}
+						}
+						if (pat.equals("")) {
+							System.out.println("nao ha alojamentos para alugar");
+							continue;
+						}
+						do{
+							System.out.print(">>> ");
+							act = scan.next();
+							if (act.matches("v|V")) {
+								break;
+							}
+						} while (!(act.matches(pat)));
+						if (act.matches("v|V")) {
+							continue;
+						}
+						agencias.get(indx).getAloj().get(Integer.parseInt(act)).checkIn();
+
+					}else if (Integer.parseInt(act) == 3){
+						System.out.println("////////////////////////////////////////////////////////////////////////////////////////////////////");
+						String pat = "";
+						System.out.println("V - Voltar");
 						for (int i = 0; i < agencias.get(indx).getCar().size(); i++) {
 							Carro c = agencias.get(indx).getCar().get(i);
 							if (!c.getDisponivel()) {
@@ -133,11 +174,52 @@ public class Main {
 						do{
 							System.out.print(">>> ");
 							act = scan.next();
+							if (act.matches("V|v")) {
+								break;
+							}
 						} while (!(act.matches(pat)));
+						if (act.matches("v|V")) {
+							continue;
+						}
 						agencias.get(indx).getCar().get(Integer.parseInt(act)).entregar();
+
+					}else if (Integer.parseInt(act) == 4){
+						System.out.println("////////////////////////////////////////////////////////////////////////////////////////////////////");
+						String pat = "";
+						System.out.println("V - Voltar");
+						for (int i = 0; i < agencias.get(indx).getAloj().size(); i++) {
+							Alojamento a = agencias.get(indx).getAloj().get(i);
+							if (!a.getDisponibilidade()) {
+								System.out.printf("%s - %s\n", i, agencias.get(indx).getAloj().get(i));
+								pat = pat + i + "|";
+							}
+						}
+						if (pat.equals("")) {
+							System.out.println("nao ha alojamentos para alugar");
+							continue;
+						}
+						do{
+							System.out.print(">>> ");
+							act = scan.next();
+							if (act.matches("V|v")) {
+								break;
+							}
+						} while (!(act.matches(pat)));
+						if (act.matches("v|V")) {
+							continue;
+						}
+						System.out.println("de uma nota de 0 a 5 para este alojamento:");
+						String nota;
+						do{
+							System.out.print(">>>");
+							nota = scan.next();
+						}while	(!nota.matches("5(.[0]+)?|[0-4](.[0-9]+)?"));
+						agencias.get(indx).getAloj().get(Integer.parseInt(act)).checkOut(Double.parseDouble(nota));
+				
 					}
 				}
 			}
+
 		}
 		
 		scan.close();
